@@ -10,9 +10,12 @@ The Pokémon Mystery Game is a fun and interactive game where you have to guess 
 
 1. Start the game by asking questions to guess the Pokémon.
 2. Ask yes/no questions to narrow down the possibilities.
+![only yes-no](https://github.com/parthiv11/mystery-pokemon/assets/75653580/0556b2c0-1d01-4b72-b48e-3cafff7f0ea4)
 3. You have 20 questions to guess the Pokémon correctly.
 4. If you guess correctly within 20 questions, congratulations! You win!
+![WON](https://github.com/parthiv11/mystery-pokemon/assets/75653580/7666f8eb-a708-419b-880a-6ecaa1faea0b)
 5. If you run out of questions, the game will reveal the Pokémon, and you can start a new game.
+![LOSE](https://github.com/parthiv11/mystery-pokemon/assets/75653580/31f63d37-4f27-4fc0-8894-7284249d1c6c)
 
 ## Setup Instructions
 
