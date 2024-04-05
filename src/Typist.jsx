@@ -24,7 +24,7 @@ function Typist({ text, speed, textSize }) {
   }, [currentIndex, text, speed]);
 
   return (
-    <span style={{ fontSize: textSize}}>
+    <span style={{ textAlign:"center", fontSize: textSize}}>
       {typedText}
     </span>
   );

@@ -19,10 +19,12 @@ The Pokémon Mystery Game is a fun and interactive game where you have to guess 
 
 ## Setup Instructions
 
-1. Clone the repository.
-2. Install dependencies using `npm install`.
-3. Start the development server using `npm run dev`.
-4. Open `http://localhost:3000` in your browser to play the game.
+1. Head over to **BACKEND**([mystery-server](https://github.com/parthiv11/mystery-server)) AND aetup it 
+
+2. Clone the repository.
+3. Install dependencies using `npm install`.
+4. Start the development server using `npm run dev`.
+5. Open `http://localhost:3000` in your browser to play the game.
 
 ## Technologies Used
 
