@@ -24,9 +24,9 @@ function Game() {
     isAnswering: false,
   });
   const [isListening, setIsListening] = useState(false);
-  const flags = useFlags(['speech']); // only causes re-render if specified flag values / traits change
-  const speech_enabled = flags.speech.enabled
-  console.log("Speech enabled "+speech_enabled)
+  const flags = useFlags(['speech_enabled']); // only causes re-render if specified flag values / traits change
+  const speech_enabled = flags.speech_enabled.enabled
+  console.log(flags)
 
 
   useEffect(() => {
@@ -200,7 +200,7 @@ function Game() {
 
         {/* Microphone button to toggle speech recognition */}
         <button
-          disabled={true}
+          disabled={speech_enabled === false}
           onClick={toggleSpeechRecognition}
           style={{ marginTop: "10px", fontSize: "20px" }}
         >
