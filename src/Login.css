@@ -7,7 +7,6 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f0f0;
-  overflow: hidden; /* To remove scrollbar */
 }
 
 .info {
@@ -25,7 +24,7 @@ body {
 .login-container {
   max-width: 400px;
   margin: 100px auto 0; /* Adjust margin to make space below info box */
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -39,11 +38,11 @@ body {
 
 .login-container p {
   color: #d63031;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .form-group label {
@@ -69,7 +68,7 @@ body {
 
 .login-container button {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   background-color: #3498db;
   color: #fff;
   border: none;
