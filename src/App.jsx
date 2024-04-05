@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Typist from "./Typist.jsx";
 import GameModelOverlay from "./GameOverModal.jsx";
+import WinnerModal from "./WinnerModal.jsx"; 
 import Eyes from "./Eyes.jsx";
 
-BACKEND_URL = process.env.BACKEND_URL 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+console.log(import.meta.env);
+
 
 function App() {
   const [pokemonName, setPokemonName] = useState("");
@@ -95,17 +98,25 @@ function App() {
         }));
         const type = data["type"];
         console.log(type);
-        if (type=='yes') {
+        if (type === "yes") {
           // happy eyes
-        }
-        else if (type=='no') {
+        } else if (type === "no") {
           // sad eyes
-        }
-        else if (type=='won') {
-          // WonModal
-        }
-        else{
-            // roll eyes
+        } else if (type === "won") {
+          setGameState((prevState) => ({
+            ...prevState,
+            correctGuess: true,
+          }));
+          setTimeout(() => {
+            fetch(`${BACKEND_URL}/get_media/${pokemonName}`)
+              .then((response) => response.json())
+              .then((data) => {
+                setPokemonImg(data["img"]);
+                setPokemonSound(data["ogg"]);
+              });
+          }, 3000);
+        } else {
+          // roll eyes
         }
 
         speakAnswer(data["answer"]);
@@ -174,12 +185,12 @@ function App() {
           placeholder="Ask a question"
           style={{ fontSize: "24px" }}
           autoComplete="off"
-          disabled={gameState.isAnswering || isListening} 
+          disabled={gameState.isAnswering || isListening}
           onKeyDown={handleKeyDown}
         />
         <button
           onClick={askQuestion}
-          disabled={gameState.isAnswering || isListening} 
+          disabled={gameState.isAnswering || isListening}
           style={{ marginTop: "10px", fontSize: "20px" }}
         >
           Ask
@@ -187,6 +198,7 @@ function App() {
 
         {/* Microphone button to toggle speech recognition */}
         <button
+          disabled={true}
           onClick={toggleSpeechRecognition}
           style={{ marginTop: "10px", fontSize: "20px" }}
         >
@@ -211,9 +223,18 @@ function App() {
             handleNewGame={handleNewGame}
           />
         )}
+        {/* Winner Modal */}
+        {gameState.correctGuess && (
+          <WinnerModal
+            pokemonImg={pokemonImg}
+            pokemonName={pokemonName}
+            handleNewGame={handleNewGame}
+          />
+        )}
       </div>
     </div>
   );
 }
+
 
 export default App;

@@ -1,0 +1,56 @@
+/* WinnerModal.css */
+
+.modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .winner-modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+  }
+  
+  .winner-modal img {
+    width: 100px; /* adjust image size as needed */
+    height: 100px; /* adjust image size as needed */
+    margin: 10px auto; /* center the image */
+    display: block;
+  }
+  
+  .winner-modal h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .winner-modal p {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .winner-modal button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .winner-modal button:hover {
+    background-color: #45a049;
+  }
+  
