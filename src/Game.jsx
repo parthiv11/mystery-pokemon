@@ -26,7 +26,6 @@ function Game() {
   const [isListening, setIsListening] = useState(false);
   const flags = useFlags(['speech_enabled']); // only causes re-render if specified flag values / traits change
   const speech_enabled = flags.speech_enabled.enabled
-  console.log(flags)
 
 
   useEffect(() => {
@@ -86,6 +85,7 @@ function Game() {
       headers: {
         "Content-Type": "application/json",
         "Authorization": `${localStorage.getItem("token")}`,
+        
       },
       body: JSON.stringify({
         question: question,
@@ -101,7 +101,6 @@ function Game() {
           questionCount: prevState.questionCount + 1,
         }));
         const type = data["type"];
-        console.log(type);
         if (type === "yes") {
           // happy eyes
         } else if (type === "no") {
@@ -151,8 +150,6 @@ function Game() {
 
   const playSound = () => {
     const audio = new Audio(pokemonSound);
-    console.log("Playing sound...");
-    console.log(pokemonSound);
     setTimeout(() => {
       audio.play();
     }, 3000);
