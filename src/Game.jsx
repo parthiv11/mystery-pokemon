@@ -71,6 +71,15 @@ function Game() {
       gameOver: false,
       answer: "",
     });
+    fetch(`${BACKEND_URL}/new_game`)
+      .then((response) => response.json())
+      .then((data) => {
+        setPokemonName(data["pokemonName"]);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+      document.getElementById("question").value = "";
   };
 
   const askQuestion = () => {
