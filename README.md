@@ -31,9 +31,13 @@ The Pokémon Mystery Game 🎮 is an engaging and interactive guessing game wher
 - Node.js: Backend server managing game logic and PokeAPI interactions.
 - MindsDB: Utilized for real-time AI-powered responses.
 - Flagsmith: Feature flagging for controlled feature rollouts.
+  ![image](https://github.com/parthiv11/mystery-pokemon/assets/75653580/c037096d-6440-4768-ada8-377270d43776)
 
 ## 📜 Credits
 
 - Pokémon data sourced from [PokeAPI](https://pokeapi.co/).
 - [Flagsmith](https://www.flagsmith.com/) for feature flagging implementation.
 - [MindsDB](https://mindsdb.com/) for real-time AI-powered responses.
+
+## 🔗 Demo
+Check out the [demo](https://mystery-pokemon.vercel.app/) here!
