@@ -1,205 +1,286 @@
 body {
-    background-color: #191919; /* Dark background color */
+  background-color: #191919; /* Dark background color */
+}
+
+.cd__main {
+  background: linear-gradient(to right, #ee9ca7, #ffdde1) !important;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Spacing between two eyes */
+  transition: box-shadow 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity 0.15s ease-in;
+  background-color: #08090a; /* Dark background for the box */
+  height: 50%;
+  width: 50%;
+  margin: auto;
+  margin-top: 2rem;
+  width: 600px; /* Increased width to accommodate two eyes */
+  height: 300px;
+  padding: 3rem;
+  border-radius: 50px;
+}
+
+.box:hover {
+  cursor: help;
+}
+
+.eyeContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between; /* Spacing between two eyes */
+}
+
+.eyeLid {
+  text-align: center;
+  display: flex;
+  background-color: white;
+  border-radius: 50% 50% 49% 51%/67% 68% 32% 33%;
+  box-shadow: inset -17px -10px 12.5px rgba(0, 0, 0, 0.144);
+  -webkit-animation-name: blink;
+    animation-name: blink;
+  -webkit-animation-duration: 15s;
+  animation-duration: 15s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  animation-play-state: running;
+}
+
+.eyes {
+  text-align: center;
+  display: flex;
+  width: 17rem;
+  height: 17rem;
+}
+
+.eye {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  width: 55%;
+  height: 55%;
+  background-color: #08090a;
+  border-radius: 50%;
+  z-index: 8976;
+  margin: auto;
+  margin-left: 30px;
+  margin-top: 70px;
+  -webkit-animation-name: eyeball;
+    animation-name: eyeball;
+  -webkit-animation-duration: 15s;
+  animation-duration: 15s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-transform-origin: 30%;
+  transform-origin: 30%;
+  animation-play-state: running;
+}
+
+.eye:after {
+  --pupil-size: 2rem;
+  position: absolute;
+  top: -0.4rem;
+  left: 1.2rem;
+  width: 3rem;
+  height: 3rem;
+  background: white;
+  border-radius: 50%;
+  content: " ";
+}
+
+@keyframes blink {
+  0% {
+    -webkit-transform: scaleX(1) scaleY(1);
   }
-  
-  .cd__main{
-    background: linear-gradient(to right, #ee9ca7, #ffdde1) !important;
+  10% {
+    -webkit-transform: scaleX(1) scaleY(1);
   }
-  
-  .box {
-    display: flex;
-    align-items: center;
-    justify-content: space-around; /* Spacing between two eyes */
-    transition: box-shadow 0.2s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: opacity 0.15s ease-in;
-    background-color: #08090a; /* Dark background for the box */
-    height: 50%;
-    width: 50%;
-    margin: auto;
-    margin-top: 2rem;
-    width: 600px; /* Increased width to accommodate two eyes */
-    height: 300px;
-    padding: 3rem;
-    border-radius: 50px;
+  10.5% {
+    -webkit-transform: scaleX(1.3) scaleY(0.1);
   }
-  
-  .box:hover {
-    cursor: help;
+  11% {
+    -webkit-transform: scaleX(1) scaleY(1);
   }
-  
-  .eyeContainer {
-    display: flex;
-    width: 100%;
-    justify-content: space-between; /* Spacing between two eyes */
+  40% {
+    -webkit-transform: scaleX(1) scaleY(1);
   }
-  
-  .eyeLid {
-    text-align: center;
-    display: flex;
-    background-color: white;
-    border-radius: 50% 50% 49% 51%/67% 68% 32% 33%;
-    box-shadow: inset -17px -10px 12.5px rgba(0, 0, 0, 0.144);
-    -webkit-animation-name: blink;
-    -webkit-animation-duration: 15s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-transform-origin: 50%;
-    animation-play-state: running;
+  40.5% {
+    -webkit-transform: scaleX(1.3) scaleY(0.1);
   }
-  
-  .eyes {
-    text-align: center;
-    display: flex;
-    width: 17rem;
-    height: 17rem;
+  41% {
+    -webkit-transform: scaleX(1) scaleY(1);
   }
-  
-  .eye {
-    position: relative;
-    display: inline-block;
-    border-radius: 50%;
-    width: 55%;
-    height: 55%;
-    background-color: #08090a;
-    border-radius: 50%;
-    z-index: 8976;
-    margin: auto;
+  70% {
+    -webkit-transform: scaleX(1) scaleY(1);
+  }
+  70.5% {
+    -webkit-transform: scaleX(1.3) scaleY(0.1);
+  }
+  71% {
+    -webkit-transform: scaleX(1) scaleY(1);
+  }
+  100% {
+    -webkit-transform: scaleX(1) scaleY(1);
+  }
+}
+
+@keyframes eyeball {
+  0% {
+    -webkit-transform: scaleX(1) scaleY(1);
     margin-left: 30px;
     margin-top: 70px;
-    -webkit-animation-name: eyeball;
-    -webkit-animation-duration: 15s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-transform-origin: 30%;
-    animation-play-state: running;
   }
-  
-  .eye:after {
-    /* Pupil */
-    --pupil-size: 2rem;
-    position: absolute;
-    top: -0.4rem;
-    left: 1.2rem;
-    width: 3rem;
-    height: 3rem;
-    background: white;
-    border-radius: 50%;
-    content: " ";
+  10% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    margin-left: 30px;
+    margin-top: 70px;
   }
-  
-  .eye.right {
-    margin-left: 0; /* Adjusting margin for the right eye */
+  10.5% {
+    -webkit-transform: scaleX(1.3) scaleY(0.1);
+    margin-left: 30px;
+    margin-top: 64px;
   }
-  
-  @keyframes blink {
-    0% {
-      -webkit-transform: scaleX(1) scaleY(1);
-    }
-    10% {
-      -webkit-transform: scaleX(1) scaleY(1);
-    }
-    10.5% {
-      -webkit-transform: scaleX(1.3) scaleY(0.1);
-    }
-    11% {
-      -webkit-transform: scaleX(1) scaleY(1);
-    }
-    40% {
-      -webkit-transform: scaleX(1) scaleY(1);
-    }
-    40.5% {
-      -webkit-transform: scaleX(1.3) scaleY(0.1);
-    }
-    41% {
-      -webkit-transform: scaleX(1) scaleY(1);
-    }
-    70% {
-      -webkit-transform: scaleX(1) scaleY(1);
-    }
-    70.5% {
-      -webkit-transform: scaleX(1.3) scaleY(0.1);
-    }
-    71% {
-      -webkit-transform: scaleX(1) scaleY(1);
-    }
-    100% {
-      -webkit-transform: scaleX(1) scaleY(1);
-    }
+  11% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    margin-left: 30px;
+    margin-top: 70px;
   }
-  
-  @keyframes eyeball {
-    0% {
-      -webkit-transform: scaleX(1) scaleY(1);
-      margin-left: 30px;
-      margin-top: 70px;
-    }
-    10% {
-      -webkit-transform: scaleX(1) scaleY(1);
-      margin-left: 30px;
-      margin-top: 70px;
-    }
-    10.5% {
-      -webkit-transform: scaleX(1.3) scaleY(0.1);
-      margin-left: 30px;
-      margin-top: 64px;
-    }
-    11% {
-      -webkit-transform: scaleX(1) scaleY(1);
-      margin-left: 30px;
-      margin-top: 70px;
-    }
-    40% {
-      -webkit-transform: scaleX(1) scaleY(1);
-      margin-left: 30px;
-      margin-top: 70px;
-    }
-    40.5% {
-      -webkit-transform: scaleX(1.3) scaleY(0.1);
-      margin-left: 78px;
-      margin-top: 58px;
-    }
-    41% {
-      -webkit-transform: scaleX(1) scaleY(1);
-      margin-left: 78px;
-      margin-top: 62px;
-    }
-    70% {
-      -webkit-transform: scaleX(1) scaleY(1);
-      margin-left: 78px;
-      margin-top: 62px;
-    }
-    70.5% {
-      -webkit-transform: scaleX(1.3) scaleY(0.1);
-      margin-left: 30px;
-      margin-top: 68px;
-    }
-    71% {
-      -webkit-transform: scaleX(1) scaleY(1);
-      margin-left: 30px;
-      margin-top: 70px;
-    }
-    100% {
-      -webkit-transform: scaleX(1) scaleY(1);
-      margin-left: 30px;
-      margin-top: 70px;
-    }
+  40% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    margin-left: 30px;
+    margin-top: 70px;
   }
+  40.5% {
+    -webkit-transform: scaleX(1.3) scaleY(0.1);
+    margin-left: 78px;
+    margin-top: 58px;
+  }
+  41% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    margin-left: 78px;
+    margin-top: 62px;
+  }
+  70% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    margin-left: 78px;
+    margin-top: 62px;
+  }
+  70.5% {
+    -webkit-transform: scaleX(1.3) scaleY(0.1);
+    margin-left: 30px;
+    margin-top: 68px;
+  }
+  71% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    margin-left: 30px;
+    margin-top: 70px;
+  }
+  100% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    margin-left: 30px;
+    margin-top: 70px;
+  }
+}
 
-  @keyframes happy-eyes {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
 
-  .happy-eyes {
-    animation-name: happy-eyes;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+@keyframes look-down {
+  0% {
+    margin-left: 78px;
+    margin-top: 62px;
   }
+  5% {
+    margin-left: 75px;
+    margin-top: 65px;
+  }
+  10% {
+    margin-left: 72px;
+    margin-top: 68px;
+  }
+  15% {
+    margin-left: 69px;
+    margin-top: 71px;
+  }
+  20% {
+    margin-left: 66px;
+    margin-top: 74px;
+  }
+  25% {
+    margin-left: 63px;
+    margin-top: 77px;
+  }
+  30% {
+    margin-left: 60px;
+    margin-top: 80px;
+  }
+  35% {
+    margin-left: 57px;
+    margin-top: 83px;
+  }
+  40% {
+    margin-left: 54px;
+    margin-top: 86px;
+  }
+  45% {
+    margin-left: 51px;
+    margin-top: 89px;
+  }
+  50% {
+    margin-left: 48px;
+    margin-top: 92px;
+  }
+  55% {
+    margin-left: 45px;
+    margin-top: 95px;
+  }
+  60% {
+    margin-left: 42px;
+    margin-top: 98px;
+  }
+  65% {
+    margin-left: 39px;
+    margin-top: 101px;
+  }
+  70% {
+    margin-left: 36px;
+    margin-top: 104px;
+  }
+  75% {
+    margin-left: 33px;
+    margin-top: 107px;
+  }
+  80% {
+    margin-left: 30px;
+    margin-top: 110px;
+  }
+  85% {
+    margin-left: 27px;
+    margin-top: 113px;
+  }
+  90% {
+    margin-left: 24px;
+    margin-top: 113px;
+  }
+  95% {
+    margin-left: 21px;
+    margin-top: 116px;
+  }
+  100% {
+    margin-left: 18px;
+    margin-top: 110px;
+  }
+}
+
+
+.look-down {
+  animation-name: look-down;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+}

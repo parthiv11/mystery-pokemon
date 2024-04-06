@@ -24,6 +24,7 @@ function Game() {
     isAnswering: false,
   });
   const [isListening, setIsListening] = useState(false);
+  const [isInputFocused, setIsInputFocused] = useState(false);
   const flags = useFlags(['speech_enabled']); // only causes re-render if specified flag values / traits change
   const speech_enabled = flags.speech_enabled.enabled
 
@@ -124,7 +125,7 @@ function Game() {
 
         speakAnswer(data["answer"]);
 
-        if (gameState.questionCount + 1 >= 20) {
+        if (gameState.questionCount + 1 >= 20 || gameState.correctGuess) {
           setTimeout(() => {
             fetch(`${BACKEND_URL}/get_media/${pokemonName}`)
               .then((response) => response.json())
@@ -170,10 +171,18 @@ function Game() {
     startGame();
   };
 
+  const handleInputFocus = () => {
+    setIsInputFocused(true);
+  };
+
+  const handleInputBlur = () => {
+    setIsInputFocused(false);
+  };
+
   return (
     <div className="App">
       <div className="center">
-        <Eyes />
+        <Eyes animation={isInputFocused ? 'look-down' : null}/>
         {gameState.answer && (
           <Typist text={gameState.answer} speed={50} textSize={60} />
         )}
@@ -186,6 +195,8 @@ function Game() {
           autoComplete="off"
           disabled={gameState.isAnswering || isListening}
           onKeyDown={handleKeyDown}
+          onFocus={handleInputFocus}
+          onBlur={handleInputBlur}
         />
         <button
           onClick={askQuestion}

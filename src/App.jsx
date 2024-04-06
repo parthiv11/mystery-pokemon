@@ -16,8 +16,6 @@ function App() {
   }, []);
 
   return (
-    <>
-      <h1>Welcome to Mystery Pokémon!</h1>
       <FlagsmithProvider
         options={{
           environmentID: import.meta.env.VITE_FLAGSMITH_KEY,
@@ -30,7 +28,6 @@ function App() {
           <Login setIsAuthenticated={setIsAuthenticated} />
         )}
       </FlagsmithProvider>
-    </>
   );
 }
 
